@@ -24,6 +24,8 @@ export default class Game extends Phaser.Scene {
 
     this.isWinner = false;
     this.isGameOver = false;
+
+    this.timer = 30
   }
 
   preload() {
@@ -78,11 +80,23 @@ export default class Game extends Phaser.Scene {
       loop: true,
     });
 
+    this.time.addEvent({
+      delay: 1000,
+      callback: this.updateTimer,
+      callbackScope: this,
+      loop: true,
+    });
+
    //agregar texto de puntaje
      this.scoreText = this.add.text(16, 16, "T: 0 / C: 0 / R: 0", {
        fontSize: "20px",
        fill: "#fff",
    });
+
+    this.TimeText = this.add.text(750,16, this.timer, {
+      fontSize: "20px",
+      fill: "#fff",
+  });
 
   }
 
@@ -112,6 +126,9 @@ export default class Game extends Phaser.Scene {
     if (this.cursors.up.isDown && this.player.body.touching.down) {
       this.player.setVelocityY(-PLAYER_MOVEMENTS.y);
     }
+
+
+
   }
 
   collectShape(jugador, figuraChocada) {
@@ -148,6 +165,14 @@ export default class Game extends Phaser.Scene {
     }
 
   }
+
+  updateTimer() {
+      this.timer= this.timer -1;
+      this.TimeText.setText (`${this.timer}`);
+      if (this.timer == 0) {
+        this.isGameOver = true;
+      }
+    }
 
   addShape() {
     // get random shape
