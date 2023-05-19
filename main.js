@@ -1,8 +1,8 @@
+import Start from "./assets/scenes/Start.js";
+import Help from "./assets/scenes/Help.js";
 import Game from "./assets/scenes/Game.js";
 import GameOver from "./assets/scenes/GameOver.js";
 import Winner from "./assets/scenes/Winner.js";
-import Start from "./assets/scenes/Start.js";
-import Help from "./assets/scenes/Help.js";
 
 // Create a new Phaser config object
 const config = {
