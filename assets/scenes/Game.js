@@ -9,6 +9,7 @@ import {
   CIRCULO,
 } from "../../utils.js";
 
+
 export default class Game extends Phaser.Scene {
   constructor() {
     // key of the scene
@@ -34,7 +35,6 @@ export default class Game extends Phaser.Scene {
 
   preload() {
     // cargar fondo, plataformas, formas, jugador
-    this.load.image("sky", "./assets/images/Cielo.png");
     this.load.image("platform", "./assets/images/platform.png");
     this.load.image("player", "./assets/images/Ninja.png");
     this.load.image(TRIANGULO, "./assets/images/Triangulo.png");
@@ -100,21 +100,23 @@ export default class Game extends Phaser.Scene {
     });
 
     this.score = 0;
-    this.scoreText = this.add.text(20, 35, "Score:" + this.score, {
-      fontSize: "32px",
-      fontStyle: "bold",
+    this.scoreText = this.add.text(16, 40, "Puntaje:" + this.score, {
+      fontSize: "20px",
       fill: "#FFFFFF",
+      fontStyle: "bold",
     });
 
    //agregar texto de puntaje
      this.shapeText = this.add.text(16, 16, "T: 0 / C: 0 / R: 0", {
        fontSize: "20px",
        fill: "#fff",
+       fontStyle: "bold",
    });
 
-    this.TimeText = this.add.text(750,16, this.timer, {
-      fontSize: "20px",
-      fill: "#fff",
+    this.TimeText = this.add.text(750,18, this.timer, {
+      fontSize: "30px",
+      fill: "#E6DE35",
+      fontStyle: "bold",
   });
 
 }
@@ -167,7 +169,6 @@ export default class Game extends Phaser.Scene {
         }
       }
     }, this);
-
   }
 
   addShape() {
@@ -201,7 +202,7 @@ collectShape(_player, shape) {
 
   this.score += scoreNow;
   console.log(scoreNow)
-  this.scoreText.setText(`Score: ${this.score.toString()}`);
+  this.scoreText.setText(`Puntaje: ${this.score.toString()}`);
   
 
   console.log(this.shapesRecolected);
