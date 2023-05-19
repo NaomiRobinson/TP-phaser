@@ -8,9 +8,9 @@ export default class Start extends Phaser.Scene {
     }
   
     preload() {
-        this.load.image("player", "./assets/images/Ninja.png");
-        this.load.image("sky", "./assets/images/Cielo.png");
-        this.load.image("recuadro", "./assets/images/Recuadro.png");
+        this.load.image("player", "../assets/images/Ninja.png");
+        this.load.image("sky", "../assets/images/Cielo.png");
+        this.load.image("recuadro", "../assets/images/Recuadro.png");
     }
   
     create() {
