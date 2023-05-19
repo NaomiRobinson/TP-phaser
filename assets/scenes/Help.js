@@ -8,7 +8,7 @@ export default class Help extends Phaser.Scene {
     }
   
     preload() {
-        this.load.image("instrucciones", "../assets/images/Instrucciones.png");
+        this.load.image("instrucciones", "./assets/images/Instrucciones.png");
     }
   
     create() {
