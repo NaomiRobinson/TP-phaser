@@ -35,7 +35,7 @@ export default class Game extends Phaser.Scene {
 
   preload() {
     // cargar fondo, plataformas, formas, jugador
-    this.load.image("platform", "./assets/images/Plataforma.png");
+    this.load.image("platform", "./assets/Plataforma.png");
     this.load.image("player", "./assets/images/Ninja.png");
     this.load.image(TRIANGULO, "./assets/images/Triangulo.png");
     this.load.image(ROMBO, "./assets/images/Rombo.png");
